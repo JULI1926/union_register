@@ -14,6 +14,10 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'custom-green': '#39a900',
+                'custom-green-hover': '#2e8b00', // Ajusta este color según tus necesidades
+            },
         },
     },
 
