@@ -18,6 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/empresas', [EmpresaController::class, 'index'])->name('empresas.index');
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/empresas', [EmpresaController::class, 'index'])->name('empresas.index');
+});
 
 require __DIR__.'/auth.php';
