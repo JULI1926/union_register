@@ -1,45 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h1>Empresas</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if($empresas->isEmpty())
-                    <tr>
-                        <td colspan="6">No hay empresas registradas.</td>
+    <div class="container mx-auto">
+        <h1 class="text-center text-2xl font-bold mb-4">Empresas</h1>
+        <div class="flex justify-center mb-4">
+            <a href="{{ route('empresas.create') }}" class="btn btn-primary">Nueva Empresa</a>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200">
+                <thead>
+                    <tr class="bg-gray-800 text-white">
+                        <th class="py-2 px-4 border-b">ID</th>
+                        <th class="py-2 px-4 border-b">Nombre</th>
+                        <th class="py-2 px-4 border-b">NIT</th>
+                        <th class="py-2 px-4 border-b">Teléfono</th>
+                        <th class="py-2 px-4 border-b">Email</th>
+                        <th class="py-2 px-4 border-b">Acciones</th>
                     </tr>
-                @else
-                    @foreach ($empresas as $empresa)
+                </thead>
+                <tbody>
+                    @if($empresas->isEmpty())
                         <tr>
-                            <td>{{ $empresa->id }}</td>
-                            <td>{{ $empresa->nombre }}</td>
-                            <td>{{ $empresa->direccion }}</td>
-                            <td>{{ $empresa->telefono }}</td>
-                            <td>{{ $empresa->email }}</td>
-                            <td>
-                                <a href="{{ route('empresas.show', $empresa->id) }}" class="btn btn-info">Ver</a>
-                                <a href="{{ route('empresas.edit', $empresa->id) }}" class="btn btn-warning">Editar</a>
-                                <form action="{{ route('empresas.destroy', $empresa->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                </form>
-                            </td>
+                            <td colspan="6" class="text-center py-4">No hay empresas registradas.</td>
                         </tr>
-                    @endforeach
-                @endif
-            </tbody>
-        </table>
+                    @else
+                        @foreach ($empresas as $empresa)
+                            <tr class="hover:bg-gray-100">
+                                <td class="py-2 px-4 border-b text-center">{{ $empresa->id }}</td>
+                                <td class="py-2 px-4 border-b text-center">{{ $empresa->nombre }}</td>
+                                <td class="py-2 px-4 border-b text-center">{{ $empresa->NIT }}</td>
+                                <td class="py-2 px-4 border-b text-center">{{ $empresa->telefono }}</td>
+                                <td class="py-2 px-4 border-b  text-center">{{ $empresa->email }}</td>
+                                <td class="py-2 px-4 border-b  text-center">
+                                    <a href="" class="btn btn-info">Ver</a>
+                                    <a href="" class="btn btn-warning">Editar</a>
+                                    <form action="" method="POST" class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
+                </tbody>
+            </table>
+        </div>
     </div>
 @endsection

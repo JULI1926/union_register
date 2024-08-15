@@ -22,7 +22,7 @@ class EmpresaController extends Controller
     {
         $request->validate([
             'nombre' => 'required',
-            'direccion' => 'required',
+            'NIT' => 'required',
             'telefono' => 'required',
             'email' => 'required|email|unique:empresas',
         ]);
