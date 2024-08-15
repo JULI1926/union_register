@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +24,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/empresas', [EmpresaController::class, 'index'])->name('empresas.index');
     Route::get('/empresas/create', [EmpresaController::class, 'create'])->name('empresas.create');
     Route::post('/empresas', [EmpresaController::class, 'store'])->name('empresas.store');
+});
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
+    Route::get('/usuarios/create', [UserController::class, 'create'])->name('users.create');
+    //Route::post('/usuarios', [UserController::class, 'store'])->name('usuarios.store');
 });
 
 require __DIR__.'/auth.php';

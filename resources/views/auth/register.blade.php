@@ -11,7 +11,7 @@
                 <x-input-label for="name" :value="__('Nombre Completo')" />
             </div>
 
-            <x-text-input id="name" class="block mt-1 w-full border-1 border-gray-400" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Ingrese su nombre completo"/>
+            <x-text-input id="name" class="block mt-1 w-full border-1 border-gray-400" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Ingrese su nombre completo" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
@@ -45,7 +45,7 @@
                 <x-input-label for="documento" :value="__('Número de Documento')" />
             </div>
 
-            <x-text-input id="documento" class="block mt-1 w-full border-gray-400" type="text" name="documento" :value="old('documento')" required autofocus autocomplete="documento" placeholder="Ingrese el número de su documento"/>
+            <x-text-input id="documento" class="block mt-1 w-full border-gray-400" type="text" name="documento" :value="old('documento')" required autofocus autocomplete="documento" placeholder="Ingrese el número de su documento" />
             <x-input-error :messages="$errors->get('documento')" class="mt-2" />
         </div>
 
@@ -59,7 +59,7 @@
                 <x-input-label for="telefono" :value="__('Número de Celular')" />
             </div>
 
-            <x-text-input id="telefono" class="block mt-1 w-full border-gray-400" type="text" name="telefono" :value="old('telefono')" required autofocus autocomplete="telefono" placeholder="Ingrese el número de su celular"/>
+            <x-text-input id="telefono" class="block mt-1 w-full border-gray-400" type="text" name="telefono" :value="old('telefono')" required autofocus autocomplete="telefono" placeholder="Ingrese el número de su celular" />
             <x-input-error :messages="$errors->get('telefono')" class="mt-2" />
         </div>
 
@@ -77,6 +77,37 @@
             <x-input-error :messages="$errors->get('fecha_ingreso')" class="mt-2" />
         </div>
 
+        <!-- Empresa -->
+        <div class="mt-6">
+            <div class="flex items-center mb-2">
+                <svg class="w-6 h-6 text-gray-500 mr-2" fill="#3A6F8F" stroke="black" stroke-width="10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M48 0C21.5 0 0 21.5 0 48L0 464c0 26.5 21.5 48 48 48l96 0 0-80c0-26.5 21.5-48 48-48s48 21.5 48 48l0 80 96 0c26.5 0 48-21.5 48-48l0-416c0-26.5-21.5-48-48-48L48 0zM64 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zm112-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM80 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM272 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16z" />
+                </svg>
+                <x-input-label for="empresa" :value="__('Empresa')" />
+            </div>
+
+            <select id="empresa" name="empresa" class="block mt-1 w-full border-gray-400 rounded-md shadow-sm" required>
+                @foreach($empresas as $empresa)
+                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                @endforeach
+            </select>
+            <x-input-error :messages="$errors->get('empresa')" class="mt-2" />
+        </div>
+
+
+        <!-- Cargo en la Empresa -->
+        <div class="mt-6">
+            <div class="flex items-center mb-2">
+                <svg class="w-6 h-6 text-gray-500 mr-2" fill="#3A6F8F" stroke="black" stroke-width="10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-96 55.2C54 332.9 0 401.3 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7c0-81-54-149.4-128-171.1l0 50.8c27.6 7.1 48 32.2 48 62l0 40c0 8.8-7.2 16-16 16l-16 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l0-24c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 24c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0c-8.8 0-16-7.2-16-16l0-40c0-29.8 20.4-54.9 48-62l0-57.1c-6-.6-12.1-.9-18.3-.9l-91.4 0c-6.2 0-12.3 .3-18.3 .9l0 65.4c23.1 6.9 40 28.3 40 53.7c0 30.9-25.1 56-56 56s-56-25.1-56-56c0-25.4 16.9-46.8 40-53.7l0-59.1zM144 448a24 24 0 1 0 0-48 24 24 0 1 0 0 48z" />
+                </svg>
+                <x-input-label for="cargo" :value="__('Cargo que Desempeña en la Empresa')" />
+            </div>
+
+            <x-text-input id="cargo" class="block mt-1 w-full border-gray-400" type="text" name="cargo" :value="old('cargo')" required autofocus autocomplete="cargo" />
+            <x-input-error :messages="$errors->get('cargo')" class="mt-2" />
+        </div>
+
 
 
 
@@ -89,7 +120,7 @@
                 <x-input-label for="email" :value="__('Correo Electrónico')" />
             </div>
 
-            <x-text-input id="email" class="block mt-1 w-full border-gray-400" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="Ingrese su correo electrónico"/>
+            <x-text-input id="email" class="block mt-1 w-full border-gray-400" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="Ingrese su correo electrónico" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -106,7 +137,7 @@
                 <x-text-input id="password" class="block mt-1 w-full border-gray-400"
                     type="password"
                     name="password"
-                    required autocomplete="new-password" placeholder="Ingrese su contraseña"/>
+                    required autocomplete="new-password" placeholder="Ingrese su contraseña" />
                 <svg onclick="togglePasswordVisibility('password')" class="w-6 h-6 text-gray-500 absolute right-2 top-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                     <path d="M572.52 241.4C518.7 135.5 407.5 64 288 64 168.5 64 57.3 135.5 3.48 241.4a48.07 48.07 0 0 0 0 29.2C57.3 376.5 168.5 448 288 448c119.5 0 230.7-71.5 284.52-177.4a48.07 48.07 0 0 0 0-29.2zM288 400c-93.3 0-178.7-55.2-222.5-144C109.3 167.2 194.7 112 288 112c93.3 0 178.7 55.2 222.5 144-43.8 88.8-129.2 144-222.5 144zm0-224a80 80 0 1 0 80 80 80.09 80.09 0 0 0-80-80zm0 128a48 48 0 1 1 48-48 48.05 48.05 0 0 1-48 48z" />
                 </svg>
@@ -128,7 +159,7 @@
             <div class="relative">
                 <x-text-input id="password_confirmation" class="block mt-1 w-full border-gray-400"
                     type="password"
-                    name="password_confirmation" required autocomplete="new-password" placeholder="Confirme su contraseña"/>
+                    name="password_confirmation" required autocomplete="new-password" placeholder="Confirme su contraseña" />
                 <svg onclick="togglePasswordVisibility('password_confirmation')" class="w-6 h-6 text-gray-500 absolute right-2 top-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                     <path d="M572.52 241.4C518.7 135.5 407.5 64 288 64 168.5 64 57.3 135.5 3.48 241.4a48.07 48.07 0 0 0 0 29.2C57.3 376.5 168.5 448 288 448c119.5 0 230.7-71.5 284.52-177.4a48.07 48.07 0 0 0 0-29.2zM288 400c-93.3 0-178.7-55.2-222.5-144C109.3 167.2 194.7 112 288 112c93.3 0 178.7 55.2 222.5 144-43.8 88.8-129.2 144-222.5 144zm0-224a80 80 0 1 0 80 80 80.09 80.09 0 0 0-80-80zm0 128a48 48 0 1 1 48-48 48.05 48.05 0 0 1-48 48z" />
                 </svg>
@@ -136,6 +167,13 @@
 
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <div class="flex items-center justify-center mt-4">
+            <input type="checkbox" id="accept_policy" name="accept_policy" required>
+            <label for="accept_policy" class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+                Acepto la <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" target="_blank" class="text-blue-500">política de tratamiento de datos personales</a>
+            </label>
         </div>
 
         <div class="flex items-center justify-center mt-4">
