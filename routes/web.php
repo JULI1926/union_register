@@ -29,7 +29,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
     Route::get('/usuarios/create', [UserController::class, 'create'])->name('users.create');
-    //Route::post('/usuarios', [UserController::class, 'store'])->name('usuarios.store');
+    Route::post('/usuarios', [UserController::class, 'store'])->name('users.store');
 });
 
 require __DIR__.'/auth.php';

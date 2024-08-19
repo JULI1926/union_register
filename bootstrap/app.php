@@ -19,9 +19,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => CheckRole::class,
         ]);
     })
+    
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create();
-
-
+    })    
+    ->create();
+    
+    
     

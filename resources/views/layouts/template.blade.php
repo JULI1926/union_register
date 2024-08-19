@@ -72,11 +72,11 @@
     <section class="page-section" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contáctanos</h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-icon"><i class="fas fa-star custom-color"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Contact Section Form-->
@@ -91,28 +91,28 @@
                     <!-- to get an API token!-->
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Name input-->
-                        <div class="form-floating mb-3">
+                        <!-- <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                            <label for="name">Full name</label>
+                            <label for="name">Nombre Completo</label>
                             <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                        </div>
+                        </div> -->
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                            <label for="email">Email address</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            <label for="email">Correo Electrónico</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">El Correo Electrónico es necesario</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Correo electrónico no válido.</div>
                         </div>
                         <!-- Phone number input-->
-                        <div class="form-floating mb-3">
+                        <!-- <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
                             <label for="phone">Phone number</label>
                             <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                        </div>
+                        </div> -->
                         <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                            <label for="message">Message</label>
+                            <label for="message">Mensaje</label>
                             <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                         </div>
                         <!-- Submit success message-->
@@ -132,10 +132,10 @@
                         <!-- This is what your users will see when there is-->
                         <!-- an error submitting the form-->
                         <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                            <div class="text-center text-danger mb-3">Error al enviar el mensaje!</div>
                         </div>
                         <!-- Submit Button-->
-                        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                        <button class="btn-form" id="submitButton" type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -147,30 +147,30 @@
             <div class="row">
                 <!-- Footer Location-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <!-- <h4 class="text-uppercase mb-4">Location</h4>
                     <p class="lead mb-0">
                         2215 John Daniel Drive
                         <br />
                         Clark, MO 65243
-                    </p>
+                    </p> -->
                 </div>
                 <!-- Footer Social Icons-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <h4 class="text-uppercase mb-4">Redes Sociales</h4>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
                 </div>
                 <!-- Footer About Text-->
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">About Freelancer</h4>
                     <p class="lead mb-0">
                         Freelance is a free to use, MIT licensed Bootstrap theme created by
                         <a href="http://startbootstrap.com">Start Bootstrap</a>
                         .
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </footer>
