@@ -32,11 +32,14 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
             'tipo_documento' => 'required|string|max:255',
             'documento' => 'required|string|max:255',
             'telefono' => 'required|string|max:255',
+            'departamento' => 'required|string|max:255',
+            'municipio' => 'required|string|max:255',
             'fecha_ingreso' => 'required|date',
             'empresa' => 'required|string|max:255',
             'cargo' => 'required|string|max:255',
@@ -48,12 +51,15 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            'lastname' => $request->lastname,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            //'password' => Hash::make($request->password),
             'tipo_documento' => $request->tipo_documento,
             'documento' => $request->documento,
             'telefono' => $request->telefono,
             'fecha_ingreso' => $request->fecha_ingreso,
+            'departamento' => $request->departamento,
+            'municipio' => $request->municipio,
             'empresa' => $request->empresa,
             'cargo' => $request->cargo,
         ]);
@@ -67,7 +73,34 @@ class RegisteredUserController extends Controller
 
     public function showRegistrationForm()
     {
+
+        // Leer el archivo municipios.json
+        $jsonString = file_get_contents(base_path('municipios.json'));
+        $municipios = json_decode($jsonString, true);
+
+        //dd($municipios);
+
+        // Asegúrate de que la clave "data" existe en el array
+        if (isset($municipios['data'])) {
+            $municipiosData = $municipios['data'];
+        } else {
+            // Maneja el caso donde "data" no existe
+            $municipiosData = [];
+        }
+
+        // Extraer departamentos y municipios
+        $departamentos = [];
+        foreach ($municipiosData as $municipio) {
+            $departamento = $municipio[10]; // Índice del Departamento
+            $municipioNombre = $municipio[12]; // Índice del Municipio
+
+            if (!isset($departamentos[$departamento])) {
+                $departamentos[$departamento] = [];
+            }
+            $departamentos[$departamento][] = $municipioNombre;
+        }
+
         $empresas = Empresa::all(); // Obtén todas las empresas
-        return view('auth.register', compact('empresas'));
+        return view('auth.register', compact('departamentos', 'empresas'));
     }
 }

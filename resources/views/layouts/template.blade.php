@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +36,8 @@
             </div>
         </div>
     </nav>
-    
-    
+
+
     <!-- About Section-->
     <section class="page-section bg-primary text-white mb-0" id="about">
         <div class="container">
@@ -89,7 +88,8 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form id="contactForm" action="{{ route('send.email') }}" method="POST">
+                        @csrf
                         <!-- Name input-->
                         <!-- <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -119,14 +119,14 @@
                         <!---->
                         <!-- This is what your users will see when the form-->
                         <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
+                        <!-- <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3">
                                 <div class="fw-bolder">Form submission successful!</div>
                                 To activate this form, sign up at
                                 <br />
                                 <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Submit error message-->
                         <!---->
                         <!-- This is what your users will see when there is-->
@@ -135,7 +135,10 @@
                             <div class="text-center text-danger mb-3">Error al enviar el mensaje!</div>
                         </div>
                         <!-- Submit Button-->
-                        <button class="btn-form" id="submitButton" type="submit">Enviar</button>
+                        <div class="button-container">
+                            <button class="btn-form" id="submitButton" type="submit">Enviar</button>
+                        </div>
+
                     </form>
                 </div>
             </div>

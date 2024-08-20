@@ -18,15 +18,18 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastname',
         'email',
         'password',
         'role',
         'tipo_documento',
         'documento',
+        'departamento',
+        'municipio',
         'telefono',
         'fecha_ingreso',
         'empresa',
-        'cargo'        
+        'cargo'
     ];
 
     /**
@@ -50,5 +53,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class);
     }
 }

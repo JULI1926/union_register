@@ -15,6 +15,7 @@
                 <tr class="bg-gray-800 text-white">
                     <th class="py-2 px-4 border-b">ID</th>
                     <th class="py-2 px-4 border-b">Nombre</th>
+                    <th class="py-2 px-4 border-b">Apellidos</th>
                     <th class="py-2 px-4 border-b">Email</th>
                     <th class="py-2 px-4 border-b">Permisos(Rol)</th>
                     <th class="py-2 px-4 border-b">Tipo de Documento</th>
@@ -23,6 +24,8 @@
                     <th class="py-2 px-4 border-b">Fecha de Ingreso</th>
                     <th class="py-2 px-4 border-b">Empresa</th>
                     <th class="py-2 px-4 border-b">Cargo</th>
+                    <th class="py-2 px-4 border-b">Departamento</th>
+                    <th class="py-2 px-4 border-b">Municipio</th>
                     <th class="py-2 px-4 border-b">Acciones</th>
                 </tr>
             </thead>
@@ -36,14 +39,17 @@
                 <tr class="hover:bg-gray-100">
                     <td class="py-2 px-4 border-b text-center">{{ $user->id }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->name }}</td>
+                    <td class="py-2 px-4 border-b text-center">{{ $user->lastname }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->email }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->role }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->tipo_documento }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->documento }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->telefono }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->fecha_ingreso }}</td>
-                    <td class="py-2 px-4 border-b text-center">{{ $user->empresa }}</td>
+                    <td class="py-2 px-4 border-b text-center">{{ $user->empresa}}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->cargo }}</td>
+                    <td class="py-2 px-4 border-b text-center">{{ $user->departamento }}</td>
+                    <td class="py-2 px-4 border-b text-center">{{ $user->municipio }}</td>
 
                     <td class="py-2 px-4 border-b  text-center">
                         <div class="flex justify-between space-x-2">
