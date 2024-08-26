@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto flex justify-center items-center min-h-screen">
     <div class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center">Crear Usuario Admin</h1>
+        <h1 class="text-2xl font-bold mb-6 text-center">Crear Usuario Administrador</h1>
         <form action="{{ route('users.store') }}" method="POST">
             @csrf
             <div class="mb-4">
@@ -28,9 +28,9 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="confirm_password" class="block text-gray-700 font-bold mb-2">Confirm Password</label>
-                <input type="password" class="form-control border border-gray-300 p-2 w-full rounded" id="confirm_password" name="confirm_password" required>
-                @error('confirm_password')
+                <label for="password_confirmation" class="block text-gray-700 font-bold mb-2">Confirm Password</label>
+                <input type="password" class="form-control border border-gray-300 p-2 w-full rounded" id="password_confirmation" name="password_confirmation" required>
+                @error('password_confirmation')
                 <div class="alert alert-danger text-red-500 mt-2">{{ $message }}</div>
                 @enderror
             </div>

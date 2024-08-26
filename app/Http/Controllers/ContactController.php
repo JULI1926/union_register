@@ -20,7 +20,7 @@ class ContactController extends Controller
             'message' => $request->message,
         ];
 
-        Mail::to('adeccocreacionsindicato@gmail.com@gmail.com')->send(new ContactMail($details));
+        Mail::to('adeccocreacionsindicato@gmail.com')->send(new ContactMail($details));
 
         return back()->with('success', 'El mensaje ha sido enviado.');
     }

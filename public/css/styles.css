@@ -408,7 +408,7 @@ button:not(:disabled),
 }
 
 .custom-bg-color:hover {
-  background-color: #ED1C24 !important; /* Cambia este valor al color que desees para el hover */
+  background-color: #FF3737 !important; /* Cambia este valor al color que desees para el hover */
 }
 
 
@@ -3173,7 +3173,7 @@ textarea.form-control-lg {
 }
 
 .btn-form {
-  background-color: #ED1C24;
+  background-color: #FF3737;
   color: white; /* Ajusta el color del texto para que contraste */
   border: none; /* Opcional: quita el borde */
   padding: 10px 20px; /* Ajusta el tamaño del botón */
@@ -10890,9 +10890,9 @@ html {
   width: 100%;
   max-width: 7rem;
   height: 0.25rem;
-  background-color: #ED1C24;
+  background-color: #FF3737;
   border-radius: 1rem;
-  border-color: #ED1C24;
+  border-color: #FF3737;
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -10912,7 +10912,7 @@ html {
 }
 
 .custom-color {
-  color: #ED1C24;
+  color: #FF3737;
 }
 
 .btn-xl {
@@ -11076,7 +11076,7 @@ html {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #ED1C24;
+  background-color: #FF3737;
   color: #fff;
 }
 
