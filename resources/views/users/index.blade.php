@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto">
+<div class="container mx-auto max-w-full bg-gray-100">
     <div class="flex justify-start mb-4">
         <a href="{{ route('dashboard') }}" class="btn btn-secondary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Volver Atrás</a>
     </div>
@@ -9,8 +9,8 @@
     <div class="flex justify-center mb-4">
         <a href="{{ route('users.create') }}" class="btn btn-primary">Nuevo Usuario</a>
     </div>
-    <div class="overflow-x-auto">
-        <table class="min-w-full bg-white border border-gray-200">
+    <div class="overflow-x-auto w-full">
+        <table class="min-w-full w-full border-collapse">
             <thead>
                 <tr class="bg-gray-800 text-white">
                     <th class="py-2 px-4 border-b">ID</th>
@@ -36,7 +36,7 @@
                 </tr>
                 @else
                 @foreach ($users as $user)
-                <tr class="hover:bg-gray-100">
+                <tr class="hover:bg-gray-100 bg-white">
                     <td class="py-2 px-4 border-b text-center">{{ $user->id }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->name }}</td>
                     <td class="py-2 px-4 border-b text-center">{{ $user->lastname }}</td>

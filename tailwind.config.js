@@ -17,7 +17,15 @@ export default {
             colors: {
                 'custom-green': '#39a900',
                 'custom-green-hover': '#2e8b00', // Ajusta este color según tus necesidades
+                'white-dark': 'white', // Asegura que el fondo blanco se mantenga en modo oscuro
             },
+        },
+    },
+
+    variants: {
+        extend: {
+            backgroundColor: ['dark'],
+            placeholderColor: ['dark'],
         },
     },
 

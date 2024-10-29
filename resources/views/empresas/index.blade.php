@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto">
+<div class="container mx-auto max-w-full bg-gray-100">
     <div class="flex justify-start mb-4">
         <a href="{{ route('dashboard') }}" class="btn btn-secondary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Volver Atrás</a>
     </div>
