@@ -31,7 +31,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('register')}}">Registrarse</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('login')}}">Login</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contáctanos</a></li>
                 </ul>
             </div>
         </div>
@@ -160,11 +160,11 @@
                 <!-- Footer Social Icons-->
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Redes Sociales</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/people/Sindicato-Adecco-Colombia/61564575033665/" target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/people/Sindicato-Adecco-Colombia/61564575033665/" target="_blank"><i class="fab fa-fw fa-facebook-f text-black"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="https://x.com/sind_adecco_col" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/crea_sindicato_adecco_colombia" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/@Creaci%C3%B3nSindicatoAdeccoCol" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@crea.sindicato.ad?_t=8qx6199VkNE&_r=1"><i class="fab brands fa-tiktok"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/creacion_sindicato_adecco_col" target="_blank"><i class="fab fa-instagram text-black"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/@Creaci%C3%B3nSindicatoAdeccoCol" target="_blank"><i class="fa-brands fa-youtube text-black"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@crea.sindicato.ad?_t=8qx6199VkNE&_r=1"><i class="fab brands fa-tiktok text-black"></i></a>
                 </div>
                 <!-- Footer About Text-->
                 <!-- <div class="col-lg-4">
